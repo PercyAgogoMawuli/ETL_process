@@ -52,10 +52,13 @@ run_query(query_statement, sql_connection): Runs SQL queries on the database and
 The ETL pipeline is executed in the following sequence:
 
 Extract: Data is scraped from the Wikipedia page and stored in a pandas DataFrame.
+
 Transform: The USD market capitalization is converted into GBP, EUR, and INR using exchange rates from exchange_rate.csv.
+
 Load:
 The transformed data is saved to a CSV file.
 The data is also loaded into an SQLite database, and queries are run to analyze the data.
+
 Querying: SQL queries demonstrate basic data retrieval and analysis, such as selecting all rows, calculating the average market capitalization in GBP, and retrieving the names of the top 5 banks.
 SQL Queries Executed:
 Retrieve all data from the Largest_banks table.
