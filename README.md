@@ -25,14 +25,21 @@ exchange_rate.csv: CSV file providing exchange rates for converting USD to other
 
 **Code Structure:**
 
-*Libraries Imported:*
+**Libraries Imported:**
 
-requests: To fetch the web page content.
-pandas: To handle data in DataFrame format and for reading/writing CSV files.
-sqlite3: To manage database storage and SQL queries.
-BeautifulSoup: To parse the HTML content from the Wikipedia page.
-numpy: To assist in numerical operations, particularly for rounding off values.
-datetime: To record timestamps for logging.
+*requests: To fetch the web page content.*
+
+*pandas: To handle data in DataFrame format and for reading/writing CSV files.*
+
+*sqlite3: To manage database storage and SQL queries.*
+
+*BeautifulSoup: To parse the HTML content from the Wikipedia page.*
+
+*numpy: To assist in numerical operations, particularly for rounding off values.*
+
+*datetime: To record timestamps for logging.*
+
+
 Functions:
 
 log_progress(message): Logs progress messages with timestamps to code_log.txt.
@@ -47,20 +54,21 @@ load_to_db(df, sql_connection, table_name): Loads the DataFrame into an SQLite d
 
 run_query(query_statement, sql_connection): Runs SQL queries on the database and prints the results.
 
-*Running the ETL Process:*
+**Running the ETL Process:**
 
 The ETL pipeline is executed in the following sequence:
 
-Extract: Data is scraped from the Wikipedia page and stored in a pandas DataFrame.
+**Extract:** Data is scraped from the Wikipedia page and stored in a pandas DataFrame.
 
-Transform: The USD market capitalization is converted into GBP, EUR, and INR using exchange rates from exchange_rate.csv.
+**Transform:** The USD market capitalization is converted into GBP, EUR, and INR using exchange rates from exchange_rate.csv.
 
-Load:
+**Load:**
 The transformed data is saved to a CSV file.
 The data is also loaded into an SQLite database, and queries are run to analyze the data.
 
-Querying: SQL queries demonstrate basic data retrieval and analysis, such as selecting all rows, calculating the average market capitalization in GBP, and retrieving the names of the top 5 banks.
-SQL Queries Executed:
+**Querying:** SQL queries demonstrate basic data retrieval and analysis, such as selecting all rows, calculating the average market capitalization in GBP, and retrieving the names of the top 5 banks.
+
+*SQL Queries Executed:*
 Retrieve all data from the Largest_banks table.
 Calculate the average market capitalization in GBP for the largest banks.
 Select the names of the top 5 largest banks.
@@ -72,9 +80,16 @@ Libraries: requests, pandas, sqlite3, numpy, datetime, beautifulsoup4
 **How to Use:**
 
 Clone or download the repository.
+
 Ensure that the exchange_rate.csv file contains the correct currency exchange rates.
-Run the script to initiate the ETL process. It will:
+
+Run the script to initiate the ETL process. 
+
+It will:
 Scrape the data from the Wikipedia page.
+
 Perform currency conversion.
+
 Save the results in both a CSV file and an SQLite database.
+
 Review the log file (code_log.txt) to track the progress of the ETL operations.
