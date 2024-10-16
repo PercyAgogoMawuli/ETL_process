@@ -56,20 +56,21 @@ The data is also loaded into an SQLite database, and queries are run to analyze 
 
 *SQL Queries Executed:*
 Retrieve all data from the Largest_banks table.
+
 Calculate the average market capitalization in GBP for the largest banks.
+
 Select the names of the top 5 largest banks.
+
 Prerequisites:
 Python 3.x
 
-Libraries: requests, pandas, sqlite3, numpy, datetime, beautifulsoup4
-
 **How to Use:**
 
-Clone or download the repository.
+1. Clone or download the repository.
 
-Ensure that the exchange_rate.csv file contains the correct currency exchange rates.
+2. Ensure that the exchange_rate.csv file contains the correct currency exchange rates.
 
-Run the script to initiate the ETL process. 
+3. Run the script to initiate the ETL process. 
 
 It will:
 Scrape the data from the Wikipedia page.
