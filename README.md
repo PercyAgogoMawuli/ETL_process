@@ -40,20 +40,6 @@ exchange_rate.csv: CSV file providing exchange rates for converting USD to other
 *datetime: To record timestamps for logging.*
 
 
-Functions:
-
-log_progress(message): Logs progress messages with timestamps to code_log.txt.
-
-extract(url, table_attribs): Scrapes bank names and market capitalization data from the Wikipedia page, then stores this data in a pandas DataFrame.
-
-transform(df, csv_path): Adds columns for market capitalization in GBP, EUR, and INR by converting from USD values using exchange rates provided in exchange_rate.csv.
-
-load_to_csv(df, output_path): Saves the transformed DataFrame to a CSV file.
-
-load_to_db(df, sql_connection, table_name): Loads the DataFrame into an SQLite database table.
-
-run_query(query_statement, sql_connection): Runs SQL queries on the database and prints the results.
-
 **Running the ETL Process:**
 
 The ETL pipeline is executed in the following sequence:
